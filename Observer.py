@@ -1,9 +1,3 @@
-import os
-from shutil import copyfile
-import win32file
-import win32con
-import difflib
-from difflib import Differ
 import time
 from definitions import *
 
@@ -11,14 +5,18 @@ hDir = HDIR
 
 
 class Observer(object):
+    """"
+    Class dedicated to initialize obs object
+    :param path_to_watch
+    """
     def __init__(self, path_to_watch):
         self.path_to_watch = path_to_watch
-        self.backup_path = './backup'
+        self.backup_path = PATH_TO_BACKUP
         self.consumers = []
 
     def add_consumer(self, consumer):
         """
-
+        add new consumer
         :param consumer:
         :return:
         """
@@ -26,7 +24,7 @@ class Observer(object):
 
     def remove_consumer(self, consumer):
         """
-
+        this function can be used to remove the consumer
         :param consumer:
         :return:
         """
@@ -34,7 +32,7 @@ class Observer(object):
 
     def backup(self):
         """
-
+        backup the files to watch
         :return:
         """
         os.makedirs(self.backup_path, exist_ok=True)
@@ -48,7 +46,7 @@ class Observer(object):
 
     def run(self):
         """
-
+        run the core
         :return:
         """
         self.backup()

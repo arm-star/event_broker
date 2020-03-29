@@ -2,7 +2,8 @@
 
 class Consumer(object):
     """
-
+    Class is dedicated to create consumers
+    :param user name, list of file names
     """
     def __init__(self, name, files=None):
         self.name = name
@@ -10,7 +11,7 @@ class Consumer(object):
 
     def configure(self, files):
         """
-
+        configure to set the consumer
         :param files:
         :return:
         """
@@ -18,7 +19,7 @@ class Consumer(object):
 
     def remove_files(self):
         """
-
+        use to remove files
         :return:
         """
         self.files = []
@@ -32,7 +33,7 @@ class Consumer(object):
 
     def __eq__(self, other):
         """
-
+        check if consumer exists by comparing consumer name and list of files
         :param other:
         :return:
         """
