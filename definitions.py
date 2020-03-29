@@ -8,8 +8,10 @@ import difflib
 
 FILE_LIST_DIRECTORY = 0x0001
 PATH_TO_WATCH = r'.\Data_files'
+PATH_TO_BACKUP = './backup'
 
-FILES_LIST = os.listdir(PATH_TO_WATCH)
+FILES_LIST_USER_1 = os.listdir(PATH_TO_WATCH)
+FILES_LIST_USER_2 = ['file_2.md']
 
 HDIR = win32file.CreateFile(
     PATH_TO_WATCH, FILE_LIST_DIRECTORY, win32con.FILE_SHARE_READ
